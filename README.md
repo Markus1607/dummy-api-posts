@@ -1,30 +1,93 @@
-# React + TypeScript + Vite
+# React DummyAPI Posts
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React application that demonstrates how to progressively load data from a DummyAPI. It uses Vite, TypeScript, Tailwind CSS, and TanStack Query (React Query) for fetching data from the DummyAPI. The application initially loads 10 posts, user can use the load more button to load more posts.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Technologies Used](#technologies-used)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-- Configure the top-level `parserOptions` property like this:
+### Prerequisites
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Make sure you have the following installed:
+
+- Node.js (v16 or higher)
+- pnpm (v9 or higher) for managing the dependencies - Check the [pnpm docs](https://pnpm.io/installation) for more information.
+
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/Markus1607/dummy-api-posts.git
+   cd react-dummyapi-api-posts
+   ```
+
+2. Install the dependencies:
+
+   ```sh
+   pnpm install
+   ```
+
+3. Create a `.env` file in the root directory and add your DummyAPI App ID:
+
+   ```env
+   VITE_DUMMY_API_KEY=your_dummyapi_app_id
+   ```
+
+### Usage
+
+To run the development server, use:
+
+```sh
+pnpm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This will start the application at `http://localhost:5173`. Open this URL in your browser to view the application.
+
+## Project Structure
+
+```
+├── public
+│   └── dogs-favicon.png
+├── src
+│   ├── api.ts
+│   ├── App.tsx
+│   ├── components
+│   │   └── PostList.tsx
+│       ├── spinner.tsx
+│   ├── main.tsx
+│   ├── types.ts
+│   └── index.css
+├── index.html
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+└── README.md
+```
+
+### Explanation
+
+- `src/api.ts`: Contains the API service to fetch posts from DummyAPI.
+- `src/App.tsx`: Main application component.
+- `src/components/PostList.tsx`: Component to display the list of posts with a button to load more posts.
+- `src/main.tsx`: Entry point for the React application.
+- `src/types.ts`: Type definitions for the project.
+- `src/index.css`: Global CSS file.
+
+## Technologies Used
+
+- [Vite](https://vitejs.dev/): Fast build tool for modern web projects.
+- [React](https://reactjs.org/): JavaScript library for building user interfaces.
+- [TypeScript](https://www.typescriptlang.org/): Typed superset of JavaScript.
+- [Tailwind CSS](https://tailwindcss.com/): Utility-first CSS framework.
+- [TanStack Query](https://tanstack.com/query/v4): Data-fetching library for React.
+- [Axios](https://axios-http.com/): Promise-based HTTP client.

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { PostResponse } from "./types";
 
-const API_URL = "https://dummyapi.io/data/v1";
+export const API_URL = "https://dummyapi.io/data/v1";
 
 const api = axios.create({
   baseURL: API_URL,

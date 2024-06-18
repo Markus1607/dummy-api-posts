@@ -8,6 +8,7 @@ This project is a React application that demonstrates how to progressively load 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Testing](#testing)
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
 
@@ -53,6 +54,15 @@ pnpm run dev
 
 This will start the application at `http://localhost:5173`. Open this URL in your browser to view the application.
 
+
+### Testing
+
+This project uses Vitest for testing. To run the tests, use:
+
+```sh
+pnpm run test
+```
+
 ## Project Structure
 
 ```
@@ -63,8 +73,10 @@ This will start the application at `http://localhost:5173`. Open this URL in you
 │   ├── App.tsx
 │   ├── components
 │   │   └── PostList.tsx
-│       ├── spinner.tsx
+│   |   └── PostList.test.tsx
+│   |   ├── spinner.tsx
 │   ├── main.tsx
+│   ├── setupTests.ts
 │   ├── types.ts
 │   └── index.css
 ├── index.html
@@ -79,7 +91,9 @@ This will start the application at `http://localhost:5173`. Open this URL in you
 - `src/api.ts`: Contains the API service to fetch posts from DummyAPI.
 - `src/App.tsx`: Main application component.
 - `src/components/PostList.tsx`: Component to display the list of posts with a button to load more posts.
+- `src/components/PostList.test.tsx`: Unit tests for the `PostList` component.
 - `src/main.tsx`: Entry point for the React application.
+- `src/setupTests.ts`: Configuration for setting up testing libraries.
 - `src/types.ts`: Type definitions for the project.
 - `src/index.css`: Global CSS file.
 
@@ -91,3 +105,4 @@ This will start the application at `http://localhost:5173`. Open this URL in you
 - [Tailwind CSS](https://tailwindcss.com/): Utility-first CSS framework.
 - [TanStack Query](https://tanstack.com/query/v4): Data-fetching library for React.
 - [Axios](https://axios-http.com/): Promise-based HTTP client.
+- [Vitest](https://vitest.dev/): Testing framework for JavaScript.

@@ -2,6 +2,8 @@
 
 This project is a React application that demonstrates how to progressively load data from a DummyAPI. It uses Vite, TypeScript, Tailwind CSS, and TanStack Query (React Query) for fetching data from the DummyAPI. The application initially loads 10 posts, user can use the load more button to load more posts.
 
+Check out the live demo site [here](https://markus1607.github.io/dummy-api-posts/).
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)

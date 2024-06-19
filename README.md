@@ -31,7 +31,7 @@ Make sure you have the following installed:
 
    ```sh
    git clone https://github.com/Markus1607/dummy-api-posts.git
-   cd react-dummyapi-api-posts
+   cd dummyapi-api-posts
    ```
 
 2. Install the dependencies:

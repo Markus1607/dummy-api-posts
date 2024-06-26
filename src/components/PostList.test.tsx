@@ -3,7 +3,15 @@ import { setupServer } from "msw/node";
 import { http, HttpResponse } from "msw";
 import { render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { expect, test, beforeAll, afterEach, afterAll } from "vitest";
+import {
+  vi,
+  test,
+  expect,
+  afterAll,
+  beforeAll,
+  afterEach,
+  beforeEach,
+} from "vitest";
 import PostList from "./PostList";
 import { API_URL } from "../api";
 
@@ -33,6 +41,17 @@ const handlers = [
 ];
 
 const server = setupServer(...handlers);
+
+beforeEach(() => {
+  // IntersectionObserver isn't available in test environment
+  const mockIntersectionObserver = vi.fn();
+  mockIntersectionObserver.mockReturnValue({
+    observe: () => null,
+    unobserve: () => null,
+    disconnect: () => null,
+  });
+  window.IntersectionObserver = mockIntersectionObserver;
+});
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());

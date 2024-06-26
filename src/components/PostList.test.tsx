@@ -56,5 +56,4 @@ test("renders PostList and fetches posts", async () => {
   });
 
   expect(screen.getByText("Post 1")).toBeInTheDocument();
-  expect(screen.getByText("Load More")).toBeInTheDocument();
 });

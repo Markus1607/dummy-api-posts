@@ -130,7 +130,9 @@ const PostList: React.FC = () => {
             })
           )}
       </div>
-      <div className="mt-4 text-center">{isFetching ? <Spinner /> : null}</div>
+      <div className="mt-4 text-center">
+        {isFetching ? <Spinner loadingText="Fetching...." /> : null}
+      </div>
     </div>
   );
 };

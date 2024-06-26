@@ -1,4 +1,4 @@
-export default function Spinner() {
+export default function Spinner({ loadingText }: { loadingText?: string }) {
   return (
     <div
       role="status"
@@ -20,7 +20,7 @@ export default function Spinner() {
           fill="currentFill"
         />
       </svg>
-      <span className="sr-only">Loading...</span>
+      <span className="sr-only">{loadingText || "Loading..."}</span>
     </div>
   );
 }
